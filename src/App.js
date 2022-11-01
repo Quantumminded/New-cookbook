@@ -1,22 +1,25 @@
-
 import './App.css';
+
+// import react router DOM
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
+// import all pages and components
+import Homepage from "./page/Homepage";
+import Category from "./page/Category";
+import Recipe from "./page/Recipe";
+import Header from "./Components/Header";
+
+
+// create the router tree
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          Hello!!!!!!!!!!!!!
+        </div>
       </header>
     </div>
   );
