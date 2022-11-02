@@ -5,6 +5,8 @@ import React from 'react'
 
 export default function Homepage() {
   return (
-    <div>Homepage</div>
+    <div>
+        <h2>I'm the Homepage</h2>
+    </div>
   )
 }

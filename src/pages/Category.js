@@ -4,6 +4,8 @@ import React from 'react'
 
 export default function Category() {
   return (
-    <div>Category</div>
+    <div>
+        <h2>I'm the Category page !!!</h2>
+    </div>
   )
 }
