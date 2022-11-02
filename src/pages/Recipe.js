@@ -22,8 +22,11 @@ export default function Recipe() {
         />
 
         <h2 className="recipe-title">{data.data.attributes.title}</h2>
+        <h3>DESCRIPTION</h3>
         <p className="description">{data.data.attributes.description}</p>
-        <p className="ingredients">{data.data.attributes.ingredients}</p>
+        <h3>INGRIDIENTS</h3>
+        <li className="ingredients">{data.data.attributes.ingredients}</li>
+        <h3>POCEDURE</h3>
         <p className="procedure">{data.data.attributes.procedure}</p>
       </div>
     </div>
