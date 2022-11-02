@@ -9,16 +9,20 @@ export default function Homepage() {
     if (loading) return <p>Loading ...........</p>
     if (error) return <p>Error 404 !!!!!!!!!!!</p>
 
-    console.log(data.data[0].attributes.image.data.attributes.url)
+    console.log(data.data[0])
   return (
     <div>
         {data.data.map(recipe => (
-            <div className="recipe-card">
-            <h2 className='recipe-title'>{recipe.attributes.title}</h2>
-            <p className='description'>{recipe.attributes.description.substring(0, 20)}</p>
-            <p className='ingredients'>{recipe.attributes.ingredients.substring(0, 20)}</p>
-            <p className='procedure'>{recipe.attributes.procedure.substring(0, 20)}</p>
-            <img src='#' alt='img'/>
+            <div key={recipe.id} className="recipe-card">
+              <img src="http://localhost:1337/uploads/apple_galette_25_600x900_af34d53f83.jpg" alt='img'/>
+
+              <h2 className='recipe-title'>{recipe.attributes.title}</h2>
+              <p className='description'>{recipe.attributes.description.substring(0, 200)} ...</p>
+
+              <Link to={`/recipe/${recipe.id}`}><h4>Full Recipe</h4></Link>
+              
+              
+              {/* <img src={recipe.data.attributes.image.data.attributes.url} alt='img'/> */}
         </div>
         ))}
     </div>
