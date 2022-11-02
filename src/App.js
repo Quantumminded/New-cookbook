@@ -1,27 +1,28 @@
-import './App.css';
 
 // import react router DOM
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes ,Route } from 'react-router-dom';
 
 // import all pages and components
-import Homepage from "./page/Homepage";
-import Category from "./page/Category";
-import Recipe from "./page/Recipe";
+import Homepage from "./pages/Homepage";
+import Category from "./pages/Category";
+import Recipe from "./pages/Recipe";
+import NotFound from "./pages/NotFound";
 import Header from "./Components/Header";
 
-
 // create the router tree
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          Hello!!!!!!!!!!!!!
-        </div>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/category/:id" element={<Category />} />
+          <Route path="/recipe/:id" element={<Recipe />} />
+          {/* <Route path="*" element={<NotFound/>}/> */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

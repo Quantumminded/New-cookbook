@@ -4,6 +4,8 @@ import React from 'react'
 
 export default function Recipe() {
   return (
-    <div>Recipe</div>
+    <div>
+        <h2>Hello im the Recipes page !!!!!!!!</h2>
+    </div>
   )
 }
