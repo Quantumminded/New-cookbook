@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom'
 import { useQuery, gql } from '@apollo/client'
 
 const RECIPES = gql`
-query getData {
+query getRecipes {
   recipes {
     data {
+      id
       attributes{
         title,
         description,
