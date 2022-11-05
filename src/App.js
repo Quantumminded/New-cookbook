@@ -3,6 +3,8 @@
 import { BrowserRouter as Router, Routes ,Route } from 'react-router-dom';
 //import apollo 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+// import { Button } from 'react-bootstrap/Button';
+// import { Card } from 'react-bootstrap/Card';
 
 // import all pages and components
 import Homepage from "./pages/Homepage";
