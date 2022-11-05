@@ -13,7 +13,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.header{
+  text-align: center;
+  font-size: 1.5rem;
+}
 .header .categories {
   text-align: center;
 }
@@ -22,14 +25,18 @@ code {
  margin: 35px;
 }
 
-/* .card-wrap {
+.card-wrap {
   justify-content: center;
-  margin: 15px;
-  padding: 5px;
+  margin: 25px;
+  padding: 25px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .card{
   margin: 5px;
-} */
+  justify-content: center;
+  /* width: 13rem;
+  height: 35rem; */
+}
+

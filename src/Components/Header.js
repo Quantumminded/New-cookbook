@@ -24,6 +24,7 @@ export default function Header() {
   console.log(data.categories.data[0].id)
   return (
     <div className="header">
+      <Link className='Home-button' to='/'>The secret book of Ada&Vale recipes</Link>
         <nav className="categories">
           {data.categories.data.map(category => (
               <Link key={category.id} to={`/category/${category.id}`}>{category.attributes.title}</Link>

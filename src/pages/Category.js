@@ -1,6 +1,8 @@
 import React from 'react';
 import { useQuery, gql} from '@apollo/client';
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom';
+import  Button  from 'react-bootstrap/Button';
+import  Card  from 'react-bootstrap/Card';
 
 
 const CATEGORY = gql `
@@ -46,19 +48,36 @@ export default function Category() {
 
   console.log(data.category.data)
 
+  // return (
+  //   <div>
+  //     <h2>{data.category.data.attributes.title}</h2>
+  //       {data.category.data.attributes.recipes.data.map(recipe => (
+  //            <div key={recipe.id} className="recipe-card" >
+  //             <img  src={`http://localhost:1337${recipe.attributes.image.data.attributes.url}`} alt='img'/>
+
+  //             <h2 className='recipe-title'>{recipe.attributes.title}</h2>
+  //             <p className="card-text">{recipe.attributes.description.substring(0, 200)} ...</p>
+
+  //             <Link to={`/recipe/${recipe.id}`}><h4>Full Recipe</h4></Link>
+  //            </div>
+  //        ))}
+  //   </div>
+  // )
+
+   // CARD WITH BOOTYSTRAP
   return (
-    <div>
-      <h2>{data.category.data.attributes.title}</h2>
+    <div className='card-wrap'>
         {data.category.data.attributes.recipes.data.map(recipe => (
-             <div key={recipe.id} className="recipe-card" >
-              <img  src={`http://localhost:1337${recipe.attributes.image.data.attributes.url}`} alt='img'/>
-
-              <h2 className='recipe-title'>{recipe.attributes.title}</h2>
-              <p className="card-text">{recipe.attributes.description.substring(0, 200)} ...</p>
-
-              <Link to={`/recipe/${recipe.id}`}><h4>Full Recipe</h4></Link>
-             </div>
-         ))}
+          <Card key={recipe.id} style={{ width: '15rem' }}>
+            <Card.Img  variant="top" src={`http://localhost:1337${recipe.attributes.image.data.attributes.url}`} />
+            <Card.Body>
+            <Card.Title>{recipe.attributes.title}</Card.Title>
+            <Card.Text>{recipe.attributes.description.substring(0, 200)} ...</Card.Text>
+            <Button variant="info"><Link to={`/recipe/${recipe.id}`}>Full Recipe</Link></Button>
+            </Card.Body>
+          </Card>
+        ))}
     </div>
-  )
+    )
+
 }
