@@ -1,8 +1,11 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-// import useFetch from '../Hooks/useFetch'
 import { useQuery, gql } from '@apollo/client'
+// import Hook
+// import useFetch from '../Hooks/useFetch'
 
+
+//create query with variables
 const RECIPE = gql`
   query getRecipe($id: ID!) {
     recipe(id: $id) {
@@ -24,7 +27,6 @@ const RECIPE = gql`
         }
       }
     }`
-// create Recipe page
 
 export default function Recipe() {
   const { id } = useParams()
@@ -36,7 +38,7 @@ export default function Recipe() {
   if (error) return <p>Error 404 !!!!!!!!!!!</p>
 
   console.log(data)
-
+// create display Recipe page
   return (
     <div>
       <div className="recipe-card">
@@ -53,10 +55,3 @@ export default function Recipe() {
   );
 }
 
-// {/* <h2 className="recipe-title">{data.recipes.data.attributes.title}</h2>
-// <h3>DESCRIPTION</h3>
-// <p className="description">{data.recipes.data.attributes.description}</p>
-// <h3>INGRIDIENTS</h3>
-// <li className="ingredients">{data.recipes.data.attributes.ingredients}</li>
-// <h3>POCEDURE</h3>
-// <p className="procedure">{data.recipes.data.attributes.procedure}</p> */}
