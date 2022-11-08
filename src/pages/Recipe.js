@@ -1,8 +1,10 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import { useQuery, gql } from '@apollo/client'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useQuery, gql } from '@apollo/client';
 // import Hook
 // import useFetch from '../Hooks/useFetch'
+import ReactMarkdown from 'react-markdown';
+import Image from 'react-bootstrap/Image'
 
 
 //create query with variables
@@ -43,13 +45,13 @@ export default function Recipe() {
     <div>
       <div className="recipe-card">
         <h2 className="recipe-title">{data.recipe.data.attributes.title}</h2>
-        <img src={`http://localhost:1337${data.recipe.data.attributes.image.data.attributes.url}`} alt='img'/>
+        <img className="img-recipe" src={`http://localhost:1337${data.recipe.data.attributes.image.data.attributes.url}`} alt='img'/>
         <h3>DESCRIPTION</h3>
-        <p className="description">{data.recipe.data.attributes.description}</p>
+        <ReactMarkdown className="description">{data.recipe.data.attributes.description}</ReactMarkdown>
         <h3>INGRIDIENTS</h3>
-        <li className="ingredients">{data.recipe.data.attributes.ingredients}</li>
+        <ReactMarkdown className="ingredients">{data.recipe.data.attributes.ingredients}</ReactMarkdown>
         <h3>POCEDURE</h3>
-        <p className="procedure">{data.recipe.data.attributes.procedure}</p>
+        <ReactMarkdown className="procedure">{data.recipe.data.attributes.procedure}</ReactMarkdown>
       </div>
     </div>
   );
