@@ -72,7 +72,7 @@ export default function Category() {
             <Card.Img  variant="top" src={`http://localhost:1337${recipe.attributes.image.data.attributes.url}`} />
             <Card.Body>
             <Card.Title>{recipe.attributes.title}</Card.Title>
-            <Card.Text>{recipe.attributes.description.substring(0, 200)} ...</Card.Text>
+            <Card.Text>{recipe.attributes.description.substring(0, 70)} ...</Card.Text>
             <Button variant="info"><Link to={`/recipe/${recipe.id}`}>Full Recipe</Link></Button>
             </Card.Body>
           </Card>
