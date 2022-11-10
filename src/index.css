@@ -13,17 +13,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.header{
+/* .header{
   text-align: center;
   font-size: 1.5rem;
 }
+
 .header .categories {
   text-align: center;
 }
 
 .header .categories a {
  margin: 35px;
-}
+} */
 
 .card-wrap {
   justify-content: center;
@@ -40,3 +41,28 @@ code {
   height: 35rem; */
 }
 
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.img-recipe {
+  height: 550px;
+  margin: 50px
+}
+
+.description {
+  margin: 25px;
+  text-align: center;
+}
+
+.ingridients {
+  text-align: center;
+}
+
+.procedure {
+  text-align: center;
+}
