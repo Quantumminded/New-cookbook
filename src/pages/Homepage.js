@@ -64,7 +64,7 @@ export default function Homepage() {
             <Card.Body>
             <Card.Title>{recipe.attributes.title}</Card.Title>
             <Card.Text>{recipe.attributes.description.substring(0, 70)} ...</Card.Text>
-            <Button variant="info"><Link to={`/recipe/${recipe.id}`}>Full Recipe</Link></Button>
+            <Button variant="info"><Link className='full-recipe' to={`/recipe/${recipe.id}`}>Full Recipe</Link></Button>
             </Card.Body>
           </Card>
         ))}
